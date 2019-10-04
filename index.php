@@ -15,12 +15,11 @@
 	</form>
 
 	<?php
+	session_start();
 
-	//$nombre = ;
-	//$correo = ;
-
-	$comprobar = comprobarNombre($_GET['nombre'], $_GET['correo']);
-
+	$_SESSION["nombre"] = $_GET['nombre'];
+	$_SESSION["correo"] = $_GET['correo'];
+	$comprobar = comprobarNombre($_SESSION["nombre"], $_SESSION["correo"]);
 	/*
 
 		Mi base de datos va a funcionar tal que si meto un nombre con un array, la relacion que van
@@ -61,9 +60,6 @@
 			}
 		}
 	}
-
 	?>
-
-
 </body>
 </html>
